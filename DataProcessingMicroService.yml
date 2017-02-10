@@ -1,0 +1,20 @@
+server:
+    port: 8020
+
+
+encryption: 
+      pattern: 
+          key: ${ENCRYPTION_KEY} 
+
+security:
+  oauth2:
+    client:
+      clientId: DonorsMicroService
+      clientSecret: ${DONORS_MICROSERVICE_PASSWORD}
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      grant-type: client_credentials
+      scope: server 
+    resource: 
+         userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
+         preferTokenInfo: false 

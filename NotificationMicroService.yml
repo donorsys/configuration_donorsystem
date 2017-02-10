@@ -1,0 +1,36 @@
+server:
+    port: 8090
+    
+    
+#Email Configurations
+spring:
+  mail:
+    host: smtp.gmail.com
+    username: donorsys@gmail.com
+    password: Donorsys123+
+    port: 587
+    properties:
+           mail:
+             smtp:
+               starttls:
+                  enable: true
+
+phone:
+    number: +14134857945
+    
+twilio:
+     username: AC6651878dd823a78959b47056684b1b9c
+     password: d12fdb345990dea207a44fcfd2db6122
+                  
+security:
+  oauth2:
+    client:
+      clientId: NotificationMicroService
+      clientSecret: ${NOTIFICATION_SERVICE_PASSWORD}
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      grant-type: client_credentials
+      scope: server      
+    resource: 
+      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
+      preferTokenInfo: false                
+                

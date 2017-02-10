@@ -1,0 +1,17 @@
+server:
+    port: 8080
+    
+spring:
+   mvc:
+     view:
+          prefix: /
+          suffix: .jsp
+   
+   datasource:  
+         url: jdbc:mysql://localhost:3306/portal
+         username: root
+         password: root
+         driver-class: com.mysql.jdbc.Driver
+   jpa:
+     hibernate:
+        ddl-auto: create
